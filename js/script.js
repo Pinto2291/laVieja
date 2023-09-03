@@ -1,5 +1,6 @@
 let playerOne = true;
 let celda = document.getElementsByClassName('celda');
+let reset = document.getElementById('resetButton');
 
 for(let i = 0; i < celda.length; i++){
     celda[i].addEventListener('click', gameStart);
@@ -40,3 +41,10 @@ function checkLine(celda1, celda2, celda3){
 function showWinner(player){
     document.querySelector('#resultado').innerHTML = player + ' Ganador!'
 }
+
+reset.addEventListener('click', () => {
+    for(let i = 0; i < celda.length; i++){
+        celda[i].innerHTML = '';
+    }
+    document.querySelector('#resultado').innerHTML = '';
+})
